@@ -1,0 +1,204 @@
+/* Additional styles for enhanced reminder form */
+.input-group.full-width {
+    width: 100%;
+    flex: none;
+}
+
+.input-hint {
+    font-size: 0.85rem;
+    color: var(--gray-color);
+    margin-top: 5px;
+    font-style: italic;
+}
+
+.priority-select, .category-select {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 16px;
+    background: white;
+    transition: var(--transition);
+}
+
+.priority-select:focus, .category-select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+.priority-select option[value="high"],
+.priority-select option[value="urgent"] {
+    color: var(--danger-color);
+    font-weight: bold;
+}
+
+.priority-select option[value="low"] {
+    color: var(--success-color);
+}
+
+.priority-select option[value="medium"] {
+    color: var(--warning-color);
+}
+
+.reminder-form-container {
+    margin-bottom: 30px;
+    animation: slideInUp 0.6s ease;
+}
+
+/* Animation for reminder items */
+.reminder-item {
+    animation: fadeIn 0.5s ease-out;
+    transition: all 0.3s ease;
+}
+
+.reminder-item.new {
+    animation: highlight 2s ease;
+}
+
+@keyframes highlight {
+    0% { background-color: rgba(76, 201, 240, 0.3); }
+    100% { background-color: transparent; }
+}
+
+/* Priority styling */
+.reminder-priority {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.priority-low {
+    background-color: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+    border: 1px solid #10b981;
+}
+
+.priority-medium {
+    background-color: rgba(245, 158, 11, 0.15);
+    color: #f59e0b;
+    border: 1px solid #f59e0b;
+}
+
+.priority-high {
+    background-color: rgba(249, 115, 22, 0.15);
+    color: #f97316;
+    border: 1px solid #f97316;
+}
+
+.priority-urgent {
+    background-color: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+    border: 1px solid #ef4444;
+    animation: pulse 1s infinite;
+}
+
+.reminder-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.reminder-info {
+    display: flex;
+    gap: 15px;
+    font-size: 0.9rem;
+    color: var(--gray-color);
+}
+
+.reminder-info i {
+    margin-right: 4px;
+}
+
+/* Enhanced form styling */
+.reminder-form-container {
+    margin-bottom: 30px;
+    animation: slideInUp 0.6s ease;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.section-header h2 {
+    color: var(--dark-color);
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Button hover effects */
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:active {
+    transform: translateY(1px);
+}
+
+.delete-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.delete-btn:active {
+    transform: translateY(1px);
+}
+
+/* Notification styles */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    animation: slideInRight 0.3s ease, fadeOut 0.5s ease 2.5s forwards;
+}
+
+.notification-success {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.notification-error {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.notification-info {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
